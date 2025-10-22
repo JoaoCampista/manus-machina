@@ -1,0 +1,61 @@
+{
+  "name": "sample_eval_set",
+  "description": "Sample evaluation set for testing agent performance",
+  "test_cases": [
+    {
+      "name": "simple_question",
+      "description": "Test agent's ability to answer simple factual questions",
+      "turns": [
+        {
+          "user_content": "What is the capital of France?",
+          "expected_tool_trajectory": [],
+          "expected_intermediate_responses": [],
+          "expected_final_response": "The capital of France is Paris."
+        }
+      ],
+      "initial_state": {}
+    },
+    {
+      "name": "tool_usage",
+      "description": "Test agent's ability to use tools correctly",
+      "turns": [
+        {
+          "user_content": "Search for information about artificial intelligence",
+          "expected_tool_trajectory": [
+            {
+              "name": "search",
+              "arguments": {
+                "query": "artificial intelligence"
+              }
+            }
+          ],
+          "expected_intermediate_responses": [
+            "I'll search for information about artificial intelligence."
+          ],
+          "expected_final_response": "Artificial intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems."
+        }
+      ],
+      "initial_state": {}
+    },
+    {
+      "name": "multi_turn_conversation",
+      "description": "Test agent's ability to maintain context across turns",
+      "turns": [
+        {
+          "user_content": "What is machine learning?",
+          "expected_tool_trajectory": [],
+          "expected_intermediate_responses": [],
+          "expected_final_response": "Machine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed."
+        },
+        {
+          "user_content": "Can you give me an example?",
+          "expected_tool_trajectory": [],
+          "expected_intermediate_responses": [],
+          "expected_final_response": "A common example of machine learning is email spam filtering, where the system learns to identify spam emails based on patterns in the data."
+        }
+      ],
+      "initial_state": {}
+    }
+  ]
+}
+
